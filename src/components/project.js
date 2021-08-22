@@ -27,19 +27,21 @@ const Project = ({
 export default Project;
 
 const Projects = styled.div`
-  height: 20.5rem;
-  width: 100%;
+  border: 1px solid black;
+  border-radius: 15px;
   background: url(${(props) => props.mobileImage});
-  background-position: center;
+  background-position: cover;
   background-size: cover;
+  background-repeat: no-repeat;
   color: black;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
+  min-height: 20.5rem;
   margin: 2.4rem auto;
-  border-radius: 15px;
+  position: relative;
   text-align: center;
+  width: 100%;
 
   ::before {
     content: "";
@@ -49,7 +51,7 @@ const Projects = styled.div`
     height: 100%;
     width: 100%;
     background: rgba(0, 0, 0, 1);
-    opacity: 0.3;
+    opacity: 0.5;
     border-radius: 15px;
   }
 
@@ -59,14 +61,19 @@ const Projects = styled.div`
 
   @media screen and (min-width: 768px) {
     background: url(${(props) => props.tabletImage});
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     height: 20rem;
   }
 
   @media screen and (min-width: 1024px) {
     background: url(${(props) => props.desktopImage});
     background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin: 0;
     height: 30.8rem;
-    display: grid;
   }
 `;
 

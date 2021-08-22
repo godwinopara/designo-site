@@ -63,9 +63,14 @@ const HeaderHero = styled.div`
 `;
 
 const Projects = styled.section`
-  border: 1px solid black;
   @media screen and (min-width: 1024px) {
     display: grid;
+    grid-gap: 2rem;
     grid-template-columns: repeat(2, 1fr);
+
+    div:first-child {
+      grid-row: span 2;
+      height: 100%;
+    }
   }
 `;
