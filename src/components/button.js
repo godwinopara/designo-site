@@ -1,6 +1,5 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
-import themes from "../themes/themes";
 
 const Button = ({ text }) => {
   return <ButtonWrapper>{text}</ButtonWrapper>;

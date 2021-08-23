@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { StaticImage } from "gatsby-plugin-image";
+import { Link } from "gatsby";
 
 const Navbar = () => {
   const [isNavOpen, setisNavOpen] = useState(false);
@@ -11,18 +12,18 @@ const Navbar = () => {
 
   return (
     <Navigation className="container">
-      <div className="logo">
+      <Link to="/">
         <StaticImage
           layout="fixed"
           width={202}
           src="../images/shared/desktop/logo-dark.png"
           alt="company logo"
         />
-      </div>
+      </Link>
       <NavLink className={isNavOpen ? "active" : ""}>
-        <li>Our Company</li>
-        <li>Locations</li>
-        <li>Contact</li>
+        <li>OUR COMPANY</li>
+        <li>LOCATIONS</li>
+        <li>CONTACT</li>
       </NavLink>
       <Hamburger onClick={handleIsNavOpen}>
         {!isNavOpen && (
@@ -55,7 +56,6 @@ const Navigation = styled.nav`
 
 const Hamburger = styled.div`
   cursor: pointer;
-
   @media screen and (min-width: 768px) {
     display: none;
   }
@@ -70,8 +70,16 @@ const NavLink = styled.ul`
   }
 
   @media screen and (min-width: 768px) {
-    display: block;
+    display: flex;
     position: static;
+    width: 50%;
+
+    li {
+      margin: auto 0 auto auto;
+      list-style: none;
+      font-size: ${({ theme }) => theme.fontSize.verySmall};
+      font-weight: 400;
+    }
 
     &.active {
       display: none;

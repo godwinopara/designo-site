@@ -3,52 +3,44 @@ import Button from "../components/button";
 import Layout from "../components/layout";
 import styled from "styled-components";
 import Project from "../components/project";
-import webDesignLargeImage from "../images/home/desktop/image-web-design-large.jpg";
-import webDesignMobileImage from "../images/home/mobile/image-web-design.jpg";
-import webDesignTabletImage from "../images/home/tablet/image-web-design.jpg";
-import appDesignImage from "../images/home/desktop/image-app-design.jpg";
-import appDesignTabletImage from "../images/home/tablet/image-app-design.jpg";
-import appDesignMobileImage from "../images/home/mobile/image-app-design.jpg";
-import graphicDesignImage from "../images/home/desktop/image-graphic-design.jpg";
-import graphicDesignTabletImage from "../images/home/tablet/image-graphic-design.jpg";
-import graphicDesignMobileImage from "../images/home/mobile/image-graphic-design.jpg";
+import { allImages } from "../components/images";
 
 const HomePage = () => {
   return (
     <Layout>
-      <header>
-        <HeaderHero>
-          <h1>Award-winning custom designs and digital branding solutions</h1>
-          <p>
-            With over 10 years in the industry, we are experienced in creating
-            fully responsive websites, app design, and engaging brand
-            experiences. Find out more about our services.
-          </p>
-          <Button text="LEARN MORE" />
-        </HeaderHero>
-      </header>
+      <HeaderHero>
+        <HeaderHeading>
+          Award-winning custom designs and digital branding solutions
+        </HeaderHeading>
+        <Headertext>
+          With over 10 years in the industry, we are experienced in creating
+          fully responsive websites, app design, and engaging brand experiences.
+          Find out more about our services.
+        </Headertext>
+        <Button text="LEARN MORE" />
+      </HeaderHero>
       <main>
         <Projects className="container">
           <Project
             path="/web-design"
             projectName="WEB DESIGN"
-            desktopImage={webDesignLargeImage}
-            tabletImage={webDesignTabletImage}
-            mobileImage={webDesignMobileImage}
+            desktopImage={allImages.homepageImages.webDesignDesktopImg}
+            tabletImage={allImages.homepageImages.webDesignTabletImg}
+            mobileImage={allImages.homepageImages.webDesignMobileImg}
           />
           <Project
             path="/app-design"
             projectName="APP DESIGN"
-            desktopImage={appDesignImage}
-            tabletImage={appDesignTabletImage}
-            mobileImage={appDesignMobileImage}
+            desktopImage={allImages.homepageImages.appDesignDesktopImg}
+            tabletImage={allImages.homepageImages.appDesignTabletImg}
+            mobileImage={allImages.homepageImages.appDesignMobileImg}
           />
           <Project
             path="/graphic-design"
             projectName="GRAPHIC DESIGN"
-            desktopImage={graphicDesignImage}
-            tabletImage={graphicDesignTabletImage}
-            mobileImage={graphicDesignMobileImage}
+            desktopImage={allImages.homepageImages.graphicDesignDesktopImg}
+            tabletImage={allImages.homepageImages.graphicDesignTabletImg}
+            mobileImage={allImages.homepageImages.graphicDesignMobileImg}
           />
         </Projects>
       </main>
@@ -58,11 +50,60 @@ const HomePage = () => {
 
 export default HomePage;
 
-const HeaderHero = styled.div`
-  min-height: 85vh;
+const HeaderHero = styled.header`
+  background-color: ${({ theme }) => theme.primaryColors.peach};
+  background-image: url(${allImages.homepageImages.heroPhoneImage});
+  background-position: 50% 220%;
+  background-size: 90%;
+  background-repeat: no-repeat;
+  color: white;
+  min-height: 100vh;
+  position: relative;
+  padding: 1rem;
+  text-align: center;
+
+  ::before {
+    background-image: url(${allImages.homepageImages.heroBackgroundPattern});
+    background-repeat: no-repeat;
+    content: "";
+    height: 100%;
+    position: absolute;
+    left: 0;
+    width: 100%;
+  }
+
+  @media screen and (min-width: 768px) {
+    background-size: 85%;
+    background-position: 50% 650%;
+  }
+`;
+
+const HeaderHeading = styled.h1`
+  font-size: ${({ theme }) => theme.fontSize.medium};
+  letter-spacing: 1px;
+  margin: 6rem auto 3rem;
+  position: relative;
+  z-index: 10;
+
+  @media screen and (min-width: 768px) {
+    font-size: ${({ theme }) => theme.fontSize.extraLarge};
+    width: 85%;
+  }
+`;
+
+const Headertext = styled.p`
+  position: relative;
+  z-index: 10;
+
+  @media screen and (min-width: 768px) {
+    width: 70%;
+    margin: auto auto 2rem;
+    font-size: ${({ theme }) => theme.fontSize.normal};
+  }
 `;
 
 const Projects = styled.section`
+  margin-top: 10rem;
   @media screen and (min-width: 1024px) {
     display: grid;
     grid-gap: 2rem;
