@@ -4,20 +4,24 @@ import Layout from "../components/layout";
 import styled from "styled-components";
 import Project from "../components/project";
 import { allImages } from "../components/images";
+import CompanyQuality from "../components/companyQuality";
+import { StaticImage } from "gatsby-plugin-image";
 
 const HomePage = () => {
   return (
     <Layout>
-      <HeaderHero>
-        <HeaderHeading>
-          Award-winning custom designs and digital branding solutions
-        </HeaderHeading>
-        <Headertext>
-          With over 10 years in the industry, we are experienced in creating
-          fully responsive websites, app design, and engaging brand experiences.
-          Find out more about our services.
-        </Headertext>
-        <Button text="LEARN MORE" />
+      <HeaderHero className="container">
+        <HeaderContainer>
+          <HeaderHeading>
+            Award-winning custom designs and digital branding solutions
+          </HeaderHeading>
+          <Headertext>
+            With over 10 years in the industry, we are experienced in creating
+            fully responsive websites, app design, and engaging brand
+            experiences. Find out more about our services.
+          </Headertext>
+          <Button text="LEARN MORE" />
+        </HeaderContainer>
       </HeaderHero>
       <main>
         <Projects className="container">
@@ -43,6 +47,36 @@ const HomePage = () => {
             mobileImage={allImages.homepageImages.graphicDesignMobileImg}
           />
         </Projects>
+        <CompanyQualities className="company-qualities container">
+          <CompanyQuality
+            imgSrc={allImages.homepageImages.passionateIllustration}
+            heading="PASSIONATE"
+            text="
+             Each project starts with an in-depth brand research to ensure we
+             only create products that serve a purpose. We merge art, design,
+             and technology into exciting new solutions.
+              "
+          />
+          <CompanyQuality
+            imgSrc={allImages.homepageImages.resourcefulIllustration}
+            heading="RESOURCEFUL"
+            text="
+            Everything that we do has a strategic purpose. We use an agile
+            approach in all of our projects and value customer
+            collaboration. It guarantees superior results that fulfill our
+            clients’ needs.
+            "
+          />
+          <CompanyQuality
+            imgSrc={allImages.homepageImages.friendlyIllustration}
+            heading="FRIENDLY"
+            text="
+            We are a group of enthusiastic folks who know how to put people
+            first. Our success depends on our customers, and we strive to give
+            them the best experience a company can provide.
+            "
+          />
+        </CompanyQualities>
       </main>
     </Layout>
   );
@@ -59,8 +93,7 @@ const HeaderHero = styled.header`
   color: white;
   min-height: 100vh;
   position: relative;
-  padding: 1rem;
-  text-align: center;
+  width: 100%;
 
   ::before {
     background-image: url(${allImages.homepageImages.heroBackgroundPattern});
@@ -74,20 +107,63 @@ const HeaderHero = styled.header`
 
   @media screen and (min-width: 768px) {
     background-size: 85%;
-    background-position: 50% 650%;
+    background-position: 50% 630%;
+    border-radius: 15px;
+    padding: 0 1rem;
+    width: 90%;
+    min-height: 90vh;
+
+    ::before {
+      background-position: 150% 50%;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    align-items: center;
+    background-position: 100% 5%;
+    background-size: 50%;
+    display: flex;
+    min-height: 90vh;
+    text-align: left;
+
+    ::before {
+      background-position: 90% 50%;
+    }
+  }
+`;
+
+const HeaderContainer = styled.div`
+  padding: 1rem;
+  text-align: center;
+
+  @media screen and (min-width: 1024px) {
+    margin-right: auto;
+    padding: 0;
+    padding-left: 5rem;
+    text-align: left;
+    width: 50%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
   }
 `;
 
 const HeaderHeading = styled.h1`
-  font-size: ${({ theme }) => theme.fontSize.medium};
-  letter-spacing: 1px;
-  margin: 6rem auto 3rem;
+  font-size: ${({ theme }) => theme.fontSize.large};
+  font-weight: normal;
+  margin: 5rem auto 3rem;
+  line-height: 1.2;
   position: relative;
   z-index: 10;
 
   @media screen and (min-width: 768px) {
     font-size: ${({ theme }) => theme.fontSize.extraLarge};
     width: 85%;
+  }
+
+  @media screen and (min-width: 1024px) {
+    width: 100%;
+    margin-top: 0;
   }
 `;
 
@@ -96,9 +172,13 @@ const Headertext = styled.p`
   z-index: 10;
 
   @media screen and (min-width: 768px) {
-    width: 70%;
+    width: 85%;
     margin: auto auto 2rem;
     font-size: ${({ theme }) => theme.fontSize.normal};
+  }
+
+  @media screen and (min-width: 1024px) {
+    width: 100%;
   }
 `;
 
@@ -113,5 +193,16 @@ const Projects = styled.section`
       grid-row: span 2;
       height: 100%;
     }
+  }
+`;
+
+const CompanyQualities = styled.section`
+  margin-top: 10rem;
+  text-align: center;
+
+  @media screen and (min-width: 1024px) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 `;

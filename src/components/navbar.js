@@ -21,9 +21,15 @@ const Navbar = () => {
         />
       </Link>
       <NavLink className={isNavOpen ? "active" : ""}>
-        <li>OUR COMPANY</li>
-        <li>LOCATIONS</li>
-        <li>CONTACT</li>
+        <li>
+          <LinkTag to="/about">OUR COMPANY</LinkTag>
+        </li>
+        <li>
+          <LinkTag to="/location">LOCATION</LinkTag>
+        </li>
+        <li>
+          <LinkTag to="/contact">CONTACT</LinkTag>
+        </li>
       </NavLink>
       <Hamburger onClick={handleIsNavOpen}>
         {!isNavOpen && (
@@ -61,6 +67,14 @@ const Hamburger = styled.div`
   }
 `;
 
+const LinkTag = styled(Link)`
+  text-decoration: none;
+  color: inherit;
+  :hover {
+    text-decoration: underline;
+  }
+`;
+
 const NavLink = styled.ul`
   display: none;
   position: fixed;
@@ -80,9 +94,18 @@ const NavLink = styled.ul`
       font-size: ${({ theme }) => theme.fontSize.verySmall};
       font-weight: 400;
     }
+    li:hover {
+      text-decoration: underline;
+    }
 
     &.active {
       display: none;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    li {
+      font-size: ${({ theme }) => theme.fontSize.small};
     }
   }
 `;

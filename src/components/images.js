@@ -20,7 +20,6 @@ export const allImages = {
     friendlyIllustration,
     passionateIllustration,
     resourcefulIllustration,
-    graphicDesignDesktopImg,
     appDesignDesktopImg,
     webDesignDesktopImg,
     graphicDesignDesktopImg,

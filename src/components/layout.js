@@ -10,7 +10,7 @@ const theme = {
 
   fontSize: {
     extraLarge: "4.8rem",
-    large: "4rem",
+    large: "3.5rem",
     medium: "3rem",
     normal: "2rem",
     small: "1.6rem",
