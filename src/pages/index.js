@@ -5,7 +5,6 @@ import styled from "styled-components";
 import Project from "../components/project";
 import { allImages } from "../components/images";
 import CompanyQuality from "../components/companyQuality";
-import { StaticImage } from "gatsby-plugin-image";
 
 const HomePage = () => {
   return (
@@ -22,6 +21,7 @@ const HomePage = () => {
           </Headertext>
           <Button text="LEARN MORE" />
         </HeaderContainer>
+        <div className="hero-img"></div>
       </HeaderHero>
       <main>
         <Projects className="container">
@@ -86,48 +86,49 @@ export default HomePage;
 
 const HeaderHero = styled.header`
   background-color: ${({ theme }) => theme.primaryColors.peach};
-  background-image: url(${allImages.homepageImages.heroPhoneImage});
-  background-position: 50% 220%;
-  background-size: 90%;
+  background-image: url(${allImages.homepageImages.heroBackgroundPattern});
+  color: ${({ theme }) => theme.primaryColors.white};
   background-repeat: no-repeat;
-  color: white;
-  min-height: 100vh;
+  min-height: 95vh;
   position: relative;
   width: 100%;
+  z-index: 50;
 
-  ::before {
-    background-image: url(${allImages.homepageImages.heroBackgroundPattern});
+  .hero-img {
+    background-color: transparent;
+    background: url(${allImages.homepageImages.heroPhoneImage});
+    background-position: 50% 20%;
     background-repeat: no-repeat;
-    content: "";
-    height: 100%;
-    position: absolute;
-    left: 0;
+    background-size: cover;
+    min-height: 50vh;
     width: 100%;
   }
 
   @media screen and (min-width: 768px) {
-    background-size: 85%;
-    background-position: 50% 630%;
     border-radius: 15px;
+    background-repeat: no-repeat;
+    background-position: right;
     padding: 0 1rem;
     width: 90%;
-    min-height: 90vh;
 
-    ::before {
-      background-position: 150% 50%;
+    .hero-img {
+      min-height: 60vh;
+      background-position: 50% 30%;
+      background-size: 80%;
     }
   }
 
   @media screen and (min-width: 1024px) {
     align-items: center;
-    background-position: 100% 5%;
-    background-size: 50%;
     display: flex;
-    min-height: 90vh;
+    align-items: center;
     text-align: left;
 
-    ::before {
-      background-position: 90% 50%;
+    .hero-img {
+      width: 40%;
+      background-size: cover;
+      background-position: 120%;
+      height: 80vh;
     }
   }
 `;
@@ -141,7 +142,7 @@ const HeaderContainer = styled.div`
     padding: 0;
     padding-left: 5rem;
     text-align: left;
-    width: 50%;
+    width: 60%;
     display: flex;
     align-items: flex-start;
     flex-direction: column;
@@ -149,8 +150,7 @@ const HeaderContainer = styled.div`
 `;
 
 const HeaderHeading = styled.h1`
-  font-size: ${({ theme }) => theme.fontSize.large};
-  font-weight: normal;
+  font-size: ${({ theme }) => theme.fontSize.medium};
   margin: 5rem auto 3rem;
   line-height: 1.2;
   position: relative;
@@ -169,11 +169,11 @@ const HeaderHeading = styled.h1`
 
 const Headertext = styled.p`
   position: relative;
+  margin: auto auto 2rem;
   z-index: 10;
 
   @media screen and (min-width: 768px) {
     width: 85%;
-    margin: auto auto 2rem;
     font-size: ${({ theme }) => theme.fontSize.normal};
   }
 
@@ -193,16 +193,43 @@ const Projects = styled.section`
       grid-row: span 2;
       height: 100%;
     }
+
+    ::before {
+      content: "";
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      left: -20%;
+      top: 45%;
+      background-image: url(${allImages.homepageImages.leafBackgroundPattern});
+      background-position: bottom;
+      background-repeat: no-repeat;
+      overflow: hidden;
+    }
   }
 `;
 
 const CompanyQualities = styled.section`
   margin-top: 10rem;
   text-align: center;
+  position: relative;
 
   @media screen and (min-width: 1024px) {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 10rem;
+
+    ::after {
+      content: "";
+      position: absolute;
+      background-image: url(${allImages.homepageImages.leafBackgroundPattern});
+      left: 0;
+      top: 40%;
+      left: 25%;
+      height: 100%;
+      width: 100%;
+      background-repeat: no-repeat;
+    }
   }
 `;

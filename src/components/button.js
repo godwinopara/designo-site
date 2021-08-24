@@ -1,5 +1,5 @@
 import * as React from "react";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 const Button = ({ text }) => {
   return <ButtonWrapper>{text}</ButtonWrapper>;
@@ -16,8 +16,9 @@ const ButtonWrapper = styled.button`
   cursor: pointer;
   display: inline-block;
   font-size: 1.5rem;
-  font-weight: 500;
+  font-weight: medium;
   letter-spacing: 1px;
+  line-height: 21px;
   margin: 2rem 0;
   padding: 1.8rem 2rem;
   position: relative;
@@ -27,10 +28,4 @@ const ButtonWrapper = styled.button`
     background: rgb(255, 173, 155);
     color: rgb(255, 255, 255);
   }
-
-  ${(props) =>
-    props.primary &&
-    css`
-      background: rgb(231, 129, 107);
-    `}
 `;

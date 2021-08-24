@@ -10,6 +10,7 @@ const theme = {
 
   fontSize: {
     extraLarge: "4.8rem",
+    miniLarge: "4rem",
     large: "3.5rem",
     medium: "3rem",
     normal: "2rem",
@@ -19,7 +20,7 @@ const theme = {
 
   primaryColors: {
     peach: "rgb(231,129,107)",
-    black: "rgb(29, 28, 30)",
+    black: "rgba(29, 28, 30, 1)",
     white: "rgb(255, 255, 255)",
   },
 

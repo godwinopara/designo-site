@@ -1,5 +1,6 @@
 import heroBackgroundPattern from "../images/home/desktop/bg-pattern-hero-home.svg";
 import heroPhoneImage from "../images/home/desktop/image-hero-phone.png";
+import leafBackgroundPattern from "../images/shared/desktop/bg-pattern-leaf.svg";
 import friendlyIllustration from "../images/home/desktop/illustration-friendly.svg";
 import passionateIllustration from "../images/home/desktop/illustration-passionate.svg";
 import resourcefulIllustration from "../images/home/desktop/illustration-resourceful.svg";
@@ -17,6 +18,7 @@ export const allImages = {
   homepageImages: {
     heroBackgroundPattern,
     heroPhoneImage,
+    leafBackgroundPattern,
     friendlyIllustration,
     passionateIllustration,
     resourcefulIllustration,
