@@ -1,19 +1,21 @@
 import * as React from "react";
 import styled from "styled-components";
 
-const Button = ({ text }) => {
-  return <ButtonWrapper>{text}</ButtonWrapper>;
+const Button = ({ text, primary }) => {
+  return <ButtonWrapper primary={primary}>{text}</ButtonWrapper>;
 };
 
 export default Button;
 
 const ButtonWrapper = styled.button`
-  background: ${(props) =>
-    props.primary ? "rgb(231,129,107)" : "rgba(255, 255, 255, 1)"};
+  background: ${({ primary, theme }) =>
+    primary ? theme.primaryColors.peach : theme.primaryColors.white};
   border: none;
   border-radius: 8px;
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.25);
   cursor: pointer;
+  color: ${({ primary, theme }) =>
+    primary ? theme.primaryColors.white : theme.primaryColors.black};
   display: inline-block;
   font-size: 1.5rem;
   font-weight: medium;

@@ -20,11 +20,12 @@ const theme = {
 
   primaryColors: {
     peach: "rgb(231,129,107)",
-    black: "rgba(29, 28, 30, 1)",
+    black: "rgb(29, 28, 30)",
     white: "rgb(255, 255, 255)",
   },
 
   secondaryColors: {
+    veryLightPeach: "rgba(253, 243, 240)",
     lightPeach: "rgb(255, 173, 155)",
     darkGrey: "rgb(51, 49, 54)",
     lightGrey: "rgb(241, 243, 245)",

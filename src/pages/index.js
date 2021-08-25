@@ -8,7 +8,7 @@ import CompanyQuality from "../components/companyQuality";
 
 const HomePage = () => {
   return (
-    <Layout>
+    <Layout pageTitle="Designo | Home ">
       <HeaderHero className="container">
         <HeaderContainer>
           <HeaderHeading>

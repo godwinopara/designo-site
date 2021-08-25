@@ -25,7 +25,7 @@ const Navbar = () => {
           <LinkTag to="/about">OUR COMPANY</LinkTag>
         </li>
         <li>
-          <LinkTag to="/location">LOCATION</LinkTag>
+          <LinkTag to="/locations">LOCATION</LinkTag>
         </li>
         <li>
           <LinkTag to="/contact">CONTACT</LinkTag>

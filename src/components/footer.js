@@ -14,7 +14,7 @@ const footer = () => {
   return (
     <Footer>
       <div className="container">
-        <ContactUs>
+        <ContactUs className="container">
           <div className="contact-us-container">
             <div className="contact-us-text">
               <h2>
@@ -152,6 +152,10 @@ const ContactUs = styled.div`
       align-items: center;
       justify-content: space-between;
       padding: 2rem 0;
+    }
+
+    .contact-us-text {
+      width: 60%;
     }
   }
 `;
