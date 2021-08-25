@@ -3,17 +3,18 @@ import Layout from "../components/layout";
 import AboutPageHook from "../components/aboutPageHook";
 import { allImages } from "../components/images";
 import styled from "styled-components";
+import DesignoBranches from "../components/designoBranches";
 
 const About = () => {
   return (
     <Layout pageTitle="About Us | Designo">
       <Main className="container">
-        <section>
+        <AboutHero>
           <AboutPageHook
             primary
             desktopImg={allImages.aboutPageImages.aboutPageHeroImage}
             tabletImg={allImages.aboutPageImages.aboutPageHeroImageTablet}
-            mobileImg={allImages.aboutPageImages.aboutPageHeroImageMobile}
+            mobileImg={allImages.aboutPageImages.aboutPageHeroImage}
             heading="About Us"
             firstPara="
         Founded in 2010, we are a creative agency that produces lasting
@@ -22,12 +23,12 @@ const About = () => {
         looking forward to creating brands, products, and digital experiences that
         connect with our clients' audiences."
           />
-        </section>
+        </AboutHero>
         <section>
           <AboutPageHook
             desktopImg={allImages.aboutPageImages.worldClassTalent}
             tabletImg={allImages.aboutPageImages.worldClassTalentTablet}
-            mobileImg={allImages.aboutPageImages.worldClassTalentMoblie}
+            mobileImg={allImages.aboutPageImages.worldClassTalent}
             heading="World-class talent"
             firstPara="
         We are a crew of strategists, problem-solvers, and technologists. Every
@@ -42,12 +43,26 @@ const About = () => {
         story and mission."
           />
         </section>
+        <BranchesLocationWorldWide>
+          <DesignoBranches
+            img={allImages.shared.canadaIllustration}
+            location="CANADA"
+          />
+          <DesignoBranches
+            img={allImages.shared.australiaIllustration}
+            location="AUSTRALIA"
+          />
+          <DesignoBranches
+            img={allImages.shared.unitedKingdomIllustration}
+            location="UNITED KINGDOM"
+          />
+        </BranchesLocationWorldWide>
         <section>
           <AboutPageHook
             secondary="secondary"
             desktopImg={allImages.aboutPageImages.realDealImage}
             tabletImg={allImages.aboutPageImages.realDealImageTablet}
-            mobileImg={allImages.aboutPageImages.realDealImageMobile}
+            mobileImg={allImages.aboutPageImages.realDealImage}
             heading="The real deal"
             firstPara=" 
         As strategic partners in our clients’ businesses, we are
@@ -61,9 +76,6 @@ const About = () => {
         drive real results."
           />
         </section>
-        <section>
-          Canada See location Australia See location United Kingdom See location
-        </section>
       </Main>
     </Layout>
   );
@@ -73,13 +85,52 @@ export default About;
 
 const Main = styled.main`
   width: 100%;
+  margin-top: 3rem;
   @media screen and (min-width: 768px) {
-    width: 89.5%;
-    margin: auto;
+    width: 90%;
   }
+`;
+
+const AboutHero = styled.section`
+  @media screen and (min-width: 1200px) {
+    ::before {
+      content: "";
+      position: absolute;
+      top: 40%;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: url(${allImages.shared.leafBackgroundPattern});
+      background-repeat: no-repeat;
+      z-index: -1;
+    }
+  }
+`;
+
+const BranchesLocationWorldWide = styled.section`
+  text-align: center;
+  margin: 12rem auto;
 
   @media screen and (min-width: 1024px) {
-    width: 90%;
-    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  @media screen and (min-width: 1200px) {
+    position: relative;
+    ::after {
+      content: "";
+      height: 100%;
+      width: 100%;
+      background: url(${allImages.shared.leafBackgroundPattern});
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: right;
+      top: 65%;
+      right: -22%;
+      position: absolute;
+      z-index: -1;
+    }
   }
 `;

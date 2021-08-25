@@ -20,9 +20,10 @@ body {
   overflow-x: hidden;
 }
 
-/* img {
+img {
   max-width: 100%;
-} */
+  object-fit: cover;
+}
 
 h1 {
   font-weight: 500;

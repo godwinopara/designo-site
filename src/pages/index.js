@@ -201,7 +201,7 @@ const Projects = styled.section`
       width: 100%;
       left: -20%;
       top: 45%;
-      background-image: url(${allImages.homepageImages.leafBackgroundPattern});
+      background-image: url(${allImages.shared.leafBackgroundPattern});
       background-position: bottom;
       background-repeat: no-repeat;
       overflow: hidden;
@@ -223,7 +223,7 @@ const CompanyQualities = styled.section`
     ::after {
       content: "";
       position: absolute;
-      background-image: url(${allImages.homepageImages.leafBackgroundPattern});
+      background-image: url(${allImages.shared.leafBackgroundPattern});
       left: 0;
       top: 40%;
       left: 25%;

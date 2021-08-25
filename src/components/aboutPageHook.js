@@ -79,7 +79,8 @@ const Container = styled.div`
         height: 40rem;
 
         picture {
-          width: 55%;
+          width: 35%;
+
           img {
             border-radius: 0;
             border-top-right-radius: 15px;
@@ -128,11 +129,6 @@ const PageDetails = styled.div`
     margin-top: 3rem;
   }
 
-  @media screen and (min-width: 400px) {
-    width: 88.4%;
-    margin: auto;
-  }
-
   @media screen and (min-width: 768px) {
     width: 100%;
     border-bottom-left-radius: 15px;
@@ -143,7 +139,8 @@ const PageDetails = styled.div`
       line-height: 48px;
     }
     .pageDetails-container {
-      width: 100%;
+      width: 90%;
+      margin: auto;
     }
   }
 
@@ -154,6 +151,7 @@ const PageDetails = styled.div`
     align-items: center;
     height: 60.4rem;
     padding: 8rem 9rem;
+    width: 65%;
   }
 
   ${(props) =>
@@ -182,6 +180,7 @@ const PageDetails = styled.div`
         border-radius: 0;
         border-bottom-left-radius: 15px;
         border-top-left-radius: 15px;
+        width: 65%;
       }
     `}
 

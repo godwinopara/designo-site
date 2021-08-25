@@ -1,7 +1,6 @@
 /* Home page images */
 import heroBackgroundPattern from "../images/home/desktop/bg-pattern-hero-home.svg";
 import heroPhoneImage from "../images/home/desktop/image-hero-phone.png";
-import leafBackgroundPattern from "../images/shared/desktop/bg-pattern-leaf.svg";
 import friendlyIllustration from "../images/home/desktop/illustration-friendly.svg";
 import passionateIllustration from "../images/home/desktop/illustration-passionate.svg";
 import resourcefulIllustration from "../images/home/desktop/illustration-resourceful.svg";
@@ -23,7 +22,7 @@ import aboutPageHeroImageTablet from "../images/about/tablet/image-about-hero.jp
 import aboutPageHeroImageMobile from "../images/about/mobile/image-about-hero.jpg";
 import realDealImage from "../images/about/desktop/image-real-deal.jpg";
 import realDealImageTablet from "../images/about/tablet/image-real-deal.jpg";
-import realDealImageMobile from "../images/about/mobile/image-about-hero.jpg";
+import realDealImageMobile from "../images/about/mobile/image-real-deal.jpg";
 import worldClassTalent from "../images/about/desktop/image-world-class-talent.jpg";
 import worldClassTalentTablet from "../images/about/tablet/image-world-class-talent.jpg";
 import worldClassTalentMoblie from "../images/about/mobile/image-world-class-talent.jpg";
@@ -31,12 +30,16 @@ import worldClassTalentMoblie from "../images/about/mobile/image-world-class-tal
 /* Shared Images */
 
 import circlePatternBackground from "../images/shared/desktop/bg-pattern-two-circles.svg";
+import smallCirclesBackgroundPattern from "../images/shared/desktop/bg-pattern-small-circle.svg";
+import leafBackgroundPattern from "../images/shared/desktop/bg-pattern-leaf.svg";
+import australiaIllustration from "../images/shared/desktop/illustration-australia.svg";
+import canadaIllustration from "../images/shared/desktop/illustration-canada.svg";
+import unitedKingdomIllustration from "../images/shared/desktop/illustration-united-kingdom.svg";
 
 export const allImages = {
   homepageImages: {
     heroBackgroundPattern,
     heroPhoneImage,
-    leafBackgroundPattern,
     friendlyIllustration,
     passionateIllustration,
     resourcefulIllustration,
@@ -67,5 +70,10 @@ export const allImages = {
 
   shared: {
     circlePatternBackground,
+    smallCirclesBackgroundPattern,
+    leafBackgroundPattern,
+    canadaIllustration,
+    unitedKingdomIllustration,
+    australiaIllustration,
   },
 };
