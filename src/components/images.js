@@ -27,6 +27,11 @@ import worldClassTalent from "../images/about/desktop/image-world-class-talent.j
 import worldClassTalentTablet from "../images/about/tablet/image-world-class-talent.jpg";
 import worldClassTalentMoblie from "../images/about/mobile/image-world-class-talent.jpg";
 
+/* Contact Page Images */
+import contactPageHeroBackgroundDesktop from "../images/contact/desktop/bg-pattern-hero-desktop.svg";
+import contactPageHeroBackgroundMobile from "../images/contact/mobile/bg-pattern-hero-contact-mobile.svg";
+import iconError from "../images/contact/desktop/icon-erro.svg";
+
 /* Shared Images */
 
 import circlePatternBackground from "../images/shared/desktop/bg-pattern-two-circles.svg";
@@ -66,6 +71,12 @@ export const allImages = {
     worldClassTalent,
     worldClassTalentTablet,
     worldClassTalentMoblie,
+  },
+
+  contactPageImages: {
+    contactPageHeroBackgroundDesktop,
+    contactPageHeroBackgroundMobile,
+    iconError,
   },
 
   shared: {

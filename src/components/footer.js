@@ -25,7 +25,7 @@ const footer = () => {
                 out how our expertise can help your business grow.
               </p>
             </div>
-            <Button text="GET IN TOUCH" />
+            <Button path="/contact" text="GET IN TOUCH" />
           </div>
         </ContactUs>
         <FooterContent>

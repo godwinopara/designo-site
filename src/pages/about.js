@@ -3,7 +3,7 @@ import Layout from "../components/layout";
 import AboutPageHook from "../components/aboutPageHook";
 import { allImages } from "../components/images";
 import styled from "styled-components";
-import DesignoBranches from "../components/designoBranches";
+import DesignoBranch from "../components/designoBranches";
 
 const About = () => {
   return (
@@ -11,7 +11,7 @@ const About = () => {
       <Main className="container">
         <AboutHero>
           <AboutPageHook
-            primary
+            primary="primary"
             desktopImg={allImages.aboutPageImages.aboutPageHeroImage}
             tabletImg={allImages.aboutPageImages.aboutPageHeroImageTablet}
             mobileImg={allImages.aboutPageImages.aboutPageHeroImage}
@@ -43,20 +43,12 @@ const About = () => {
         story and mission."
           />
         </section>
-        <BranchesLocationWorldWide>
-          <DesignoBranches
-            img={allImages.shared.canadaIllustration}
-            location="CANADA"
-          />
-          <DesignoBranches
-            img={allImages.shared.australiaIllustration}
-            location="AUSTRALIA"
-          />
-          <DesignoBranches
-            img={allImages.shared.unitedKingdomIllustration}
-            location="UNITED KINGDOM"
-          />
-        </BranchesLocationWorldWide>
+
+        {/* ******************************************** */}
+        <>
+          <DesignoBranch />
+        </>
+        {/* *********************************************** */}
         <section>
           <AboutPageHook
             secondary="secondary"
@@ -102,34 +94,6 @@ const AboutHero = styled.section`
       width: 100%;
       background: url(${allImages.shared.leafBackgroundPattern});
       background-repeat: no-repeat;
-      z-index: -1;
-    }
-  }
-`;
-
-const BranchesLocationWorldWide = styled.section`
-  text-align: center;
-  margin: 12rem auto;
-
-  @media screen and (min-width: 1024px) {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  @media screen and (min-width: 1200px) {
-    position: relative;
-    ::after {
-      content: "";
-      height: 100%;
-      width: 100%;
-      background: url(${allImages.shared.leafBackgroundPattern});
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: right;
-      top: 65%;
-      right: -22%;
-      position: absolute;
       z-index: -1;
     }
   }

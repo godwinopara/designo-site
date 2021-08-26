@@ -1,13 +1,18 @@
+import { Link } from "gatsby";
 import * as React from "react";
 import styled from "styled-components";
 
-const Button = ({ text, primary }) => {
-  return <ButtonWrapper primary={primary}>{text}</ButtonWrapper>;
+const Button = ({ text, primary, path }) => {
+  return (
+    <ButtonWrapper to={path} primary={primary}>
+      {text}
+    </ButtonWrapper>
+  );
 };
 
 export default Button;
 
-const ButtonWrapper = styled.button`
+const ButtonWrapper = styled(Link)`
   background: ${({ primary, theme }) =>
     primary ? theme.primaryColors.peach : theme.primaryColors.white};
   border: none;
@@ -24,6 +29,7 @@ const ButtonWrapper = styled.button`
   margin: 2rem 0;
   padding: 1.8rem 2rem;
   position: relative;
+  text-decoration: none;
   z-index: 30;
 
   :hover {

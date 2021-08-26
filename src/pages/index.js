@@ -19,7 +19,7 @@ const HomePage = () => {
             fully responsive websites, app design, and engaging brand
             experiences. Find out more about our services.
           </Headertext>
-          <Button text="LEARN MORE" />
+          <Button path="/about" text="LEARN MORE" />
         </HeaderContainer>
         <div className="hero-img"></div>
       </HeaderHero>
