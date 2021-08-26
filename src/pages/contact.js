@@ -67,8 +67,22 @@ const Main = styled.main`
 `;
 
 const ContactInformations = styled.section`
+  background: url(${allImages.contactPageImages.heroBackgroundMobile});
+  background-position: 20% 2%;
   background-color: ${({ theme }) => theme.primaryColors.peach};
   padding: 7.2rem 0;
+
+  @media screen and (min-width: 768px) {
+    background-image: url(${allImages.contactPageImages.heroBackgroundDesktop});
+    background-position: -15% 1%;
+    background-size: 70%;
+    background-repeat: no-repeat;
+    border-radius: 15px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    background-position: -15% 100%;
+  }
 `;
 
 const Container = styled.div`
@@ -120,6 +134,8 @@ const ContactDetails = styled.div`
 const Form = styled.form`
   color: white;
   width: 100%;
+  position: relative;
+
   label {
     display: block;
     opacity: 0.5;
@@ -139,6 +155,10 @@ const Form = styled.form`
     font-size: 15px;
     line-height: 26px;
   }
+
+  input:focus {
+    border-bottom: 3px solid ${({ theme }) => theme.primaryColors.white};
+  }
   textarea {
     background: transparent;
     border: none;
@@ -146,6 +166,9 @@ const Form = styled.form`
     width: 100%;
     outline: none;
     color: inherit;
+  }
+  textarea:focus {
+    border-bottom: 3px solid ${({ theme }) => theme.primaryColors.white};
   }
 
   button {

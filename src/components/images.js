@@ -28,14 +28,22 @@ import worldClassTalentTablet from "../images/about/tablet/image-world-class-tal
 import worldClassTalentMoblie from "../images/about/mobile/image-world-class-talent.jpg";
 
 /* Contact Page Images */
-import contactPageHeroBackgroundDesktop from "../images/contact/desktop/bg-pattern-hero-desktop.svg";
-import contactPageHeroBackgroundMobile from "../images/contact/mobile/bg-pattern-hero-contact-mobile.svg";
-import iconError from "../images/contact/desktop/icon-erro.svg";
+import heroBackgroundDesktop from "../images/contact/desktop/bg-pattern-hero-desktop.svg";
+import heroBackgroundMobile from "../images/contact/mobile/bg-pattern-hero-contact-mobile.svg";
+import iconError from "../images/contact/desktop/icon-error.svg";
 
+/* Location Page Images */
+import australiaMap from "../images/locations/desktop/image-map-australia.png";
+import canadaMap from "../images/locations/desktop/image-map-canada.png";
+import unitedKingdomMap from "../images/locations/desktop/image-map-united-kingdom.png";
+import australiaMapTablet from "../images/locations/tablet/image-map-australia.png";
+import canadaMapTablet from "../images/locations/tablet/image-map-canada.png";
+import unitedKingdomMapTablet from "../images/locations/tablet/image-map-uk.png";
 /* Shared Images */
 
 import circlePatternBackground from "../images/shared/desktop/bg-pattern-two-circles.svg";
 import smallCirclesBackgroundPattern from "../images/shared/desktop/bg-pattern-small-circle.svg";
+import twoCirclesBackgroundPattern from "../images/shared/desktop/bg-pattern-two-circles.svg";
 import leafBackgroundPattern from "../images/shared/desktop/bg-pattern-leaf.svg";
 import australiaIllustration from "../images/shared/desktop/illustration-australia.svg";
 import canadaIllustration from "../images/shared/desktop/illustration-canada.svg";
@@ -74,14 +82,24 @@ export const allImages = {
   },
 
   contactPageImages: {
-    contactPageHeroBackgroundDesktop,
-    contactPageHeroBackgroundMobile,
+    heroBackgroundDesktop,
+    heroBackgroundMobile,
     iconError,
+  },
+
+  locationPageImages: {
+    australiaMap,
+    australiaMapTablet,
+    canadaMap,
+    canadaMapTablet,
+    unitedKingdomMap,
+    unitedKingdomMapTablet,
   },
 
   shared: {
     circlePatternBackground,
     smallCirclesBackgroundPattern,
+    twoCirclesBackgroundPattern,
     leafBackgroundPattern,
     canadaIllustration,
     unitedKingdomIllustration,
