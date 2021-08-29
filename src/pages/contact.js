@@ -1,10 +1,56 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import DesignoBranch from "../components/designoBranches";
 import { allImages } from "../components/images";
 import Layout from "../components/layout";
 
 const Contact = () => {
+  const [inputName, setinputName] = useState("");
+  const [inputEmail, setinputEmail] = useState("");
+  const [inputPhoneNumber, setinputPhoneNumber] = useState("");
+  const [inputMessage, setinputMessage] = useState("");
+
+  /* Errors  */
+  const [showNameInputError, setshowNameInputError] = useState(false);
+  const [showPhoneNumberInputError, setshowPhoneNumberInputError] =
+    useState(false);
+  const [showEmailInputError, setshowEmailInputError] = useState(false);
+  const [showMessageInputError, setshowMessageInputError] = useState(false);
+
+  const handleNameChange = (e) => {
+    setinputName(e.target.value);
+  };
+  const handleEmailChange = (e) => {
+    setinputEmail(e.target.value);
+  };
+  const handleChangePhoneNumber = (e) => {
+    setinputPhoneNumber(e.target.value);
+  };
+  const handleMessageChange = (e) => {
+    setinputMessage(e.target.value);
+  };
+
+  /* show ERRORS FOR ANY EMPTY INPUT FIELD */
+
+  const showError = (input, showError) => {
+    if (input !== "") {
+      showError(false);
+    } else if (input === "") {
+      showError(true);
+    }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    showError(inputEmail, setshowEmailInputError);
+
+    showError(inputName, setshowNameInputError);
+    showError(inputPhoneNumber, setshowPhoneNumberInputError);
+
+    showError(inputMessage, setshowMessageInputError);
+  };
+
   return (
     <Layout pageTitle="Contact Us | Designo">
       <Main className="container">
@@ -19,20 +65,50 @@ const Contact = () => {
                 relatable to your users, drop us a line.
               </p>
             </ContactDetails>
-            <Form action="">
-              <div>
+            <Form action="" noValidate onSubmit={handleSubmit}>
+              <FormControl>
                 <label htmlFor="name">Name</label>
-                <input type="text" name="name" id="name" required />
-              </div>
-              <div>
+                <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  required
+                  onChange={handleNameChange}
+                  value={inputName}
+                />
+                {showNameInputError && (
+                  <span className="error-message">Can't be empty</span>
+                )}
+              </FormControl>
+              <FormControl>
                 <label htmlFor="email">Email Address</label>
-                <input type="email" name="email" id="email" required />
-              </div>
-              <div>
-                <label htmlFor="phone">Phone</label>
-                <input type="phone" name="phone" id="phone" required />
-              </div>
-              <div>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  required
+                  onChange={handleEmailChange}
+                  value={inputEmail}
+                />
+                {showEmailInputError && (
+                  <span className="error-message">Can't be empty</span>
+                )}
+              </FormControl>
+              <FormControl>
+                <label htmlFor="phone number">Phone</label>
+                <input
+                  type="number"
+                  name="phone number"
+                  id="phone"
+                  required
+                  onChange={handleChangePhoneNumber}
+                  value={inputPhoneNumber}
+                />
+                {showPhoneNumberInputError && (
+                  <span className="error-message">Can't be empty</span>
+                )}
+              </FormControl>
+              <FormControl>
                 <label htmlFor="name">Your Message</label>
                 <textarea
                   name="message"
@@ -40,8 +116,13 @@ const Contact = () => {
                   cols="30"
                   rows="5"
                   required
+                  onChange={handleMessageChange}
+                  value={inputMessage}
                 ></textarea>
-              </div>
+                {showMessageInputError && (
+                  <span className="error-message">Can't be empty</span>
+                )}
+              </FormControl>
               <button type="submit">Submit</button>
             </Form>
           </Container>
@@ -201,5 +282,21 @@ const Form = styled.form`
 
   @media screen and (min-width: 1024px) {
     width: 50%;
+  }
+`;
+
+const FormControl = styled.div`
+  position: relative;
+
+  .error-message {
+    background-image: url(${allImages.contactPageImages.iconError});
+    background-repeat: no-repeat;
+    background-position: right;
+    position: absolute;
+    font-style: italic;
+    font-size: ${({ theme }) => theme.fontSize.verySmall};
+    padding-right: 40px;
+    right: 0;
+    top: 0;
   }
 `;

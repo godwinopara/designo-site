@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { StaticImage } from "gatsby-plugin-image";
 import { Link } from "gatsby";
@@ -10,6 +10,15 @@ const Navbar = () => {
     setisNavOpen(!isNavOpen);
   };
 
+  useEffect(() => {
+    if (isNavOpen) {
+      document.documentElement.style.overflowY = "hidden";
+    }
+    return () => {
+      document.documentElement.style.overflowY = "scroll";
+    };
+  }, [isNavOpen]);
+
   return (
     <Navigation className="container">
       <Link to="/">
@@ -20,7 +29,7 @@ const Navbar = () => {
           alt="company logo"
         />
       </Link>
-      <NavLink className={isNavOpen ? "active" : ""}>
+      <NavLink className={isNavOpen ? "navOpen" : ""}>
         <li>
           <LinkTag to="/about">OUR COMPANY</LinkTag>
         </li>
@@ -70,23 +79,45 @@ const Hamburger = styled.div`
 const LinkTag = styled(Link)`
   text-decoration: none;
   color: inherit;
-  :hover {
-    text-decoration: underline;
+  @media screen and (min-width: 768px) {
+    :hover {
+      text-decoration: underline;
+    }
   }
 `;
 
 const NavLink = styled.ul`
   display: none;
-  position: fixed;
+  background: ${({ theme }) => theme.primaryColors.black};
+  list-style: none;
 
-  &.active {
+  &.navOpen {
+    position: fixed;
+    left: 0;
+    top: 85px;
+    height: 233px;
+    width: 100%;
     display: block;
+    color: white;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-left: 2.4rem;
+
+    li {
+      font-size: 2.4rem;
+      line-height: 25px;
+      letter-spacing: 2px;
+      margin-bottom: 3.2rem;
+    }
   }
 
   @media screen and (min-width: 768px) {
     display: flex;
     position: static;
     width: 50%;
+    background: transparent;
 
     li {
       margin: auto 0 auto auto;
@@ -98,7 +129,7 @@ const NavLink = styled.ul`
       text-decoration: underline;
     }
 
-    &.active {
+    &.navOpen {
       display: none;
     }
   }
