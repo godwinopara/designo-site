@@ -3,7 +3,7 @@ import React from "react";
 import styled from "styled-components";
 import arrowLink from "../images/shared/desktop/icon-right-arrow.svg";
 
-const Project = ({
+const DesignoDesigns = ({
   projectName,
   path,
   mobileImage,
@@ -24,7 +24,7 @@ const Project = ({
   );
 };
 
-export default Project;
+export default DesignoDesigns;
 
 const Projects = styled.div`
   border-radius: 15px;

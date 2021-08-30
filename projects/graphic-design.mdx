@@ -1,0 +1,57 @@
+---
+title: "Graphic Design"
+intro: "We deliver eye-catching branding materials that are tailored to meet your business objectives"
+---
+
+import {
+  ProjectImg,
+  ProjectDetails,
+  Project,
+  ProjectContainer,
+  DesignContainer,
+} from "../src/components/ProjectPage";
+import DesignoDesigns from "../src/components/designoDesigns";
+import { allImages } from "../src/components/images.js";
+
+<ProjectContainer>
+<Project>
+  <ProjectImg img={allImages.graphicDesignPage.timBrownImg}></ProjectImg>
+  <ProjectDetails>
+    <h3>Tim Brown</h3>
+    <p>Tim Brown A book cover designed for Tim Brown’s new release, ‘Change’</p>
+  </ProjectDetails>
+</Project>
+
+<Project>
+  <ProjectImg img={allImages.graphicDesignPage.boxedWaterImg}></ProjectImg>
+  <ProjectDetails>
+    <h3>Boxed Water</h3>
+    <p>A simple packaging concept made for Boxed Water</p>
+  </ProjectDetails>
+</Project>
+
+<Project>
+  <ProjectImg img={allImages.graphicDesignPage.scienceImg}></ProjectImg>
+  <ProjectDetails>
+    <h3>Science</h3>
+    <p>A poster made in collaboration with the Federal Art Project</p>
+  </ProjectDetails>
+</Project>
+</ProjectContainer>
+
+<DesignContainer>
+  <DesignoDesigns
+    path="/app-design"
+    projectName="APP DESIGN"
+    desktopImage={allImages.homepageImages.appDesignDesktopImg}
+    tabletImage={allImages.homepageImages.appDesignTabletImg}
+    mobileImage={allImages.homepageImages.appDesignMobileImg}
+  />
+  <DesignoDesigns
+    path="/web-design"
+    projectName="WEB DESIGN"
+    desktopImage={allImages.homepageImages.webDesignDesktopImg}
+    tabletImage={allImages.homepageImages.webDesignTabletImg}
+    mobileImage={allImages.homepageImages.webDesignMobileImg}
+  />
+</DesignContainer>

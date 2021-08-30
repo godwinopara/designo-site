@@ -2,9 +2,9 @@ import React from "react";
 import Button from "../components/button";
 import Layout from "../components/layout";
 import styled from "styled-components";
-import Project from "../components/project";
 import { allImages } from "../components/images";
 import CompanyQuality from "../components/companyQuality";
+import DesignoDesigns from "../components/designoDesigns";
 
 const HomePage = () => {
   return (
@@ -25,21 +25,21 @@ const HomePage = () => {
       </HeaderHero>
       <main>
         <Projects className="container">
-          <Project
+          <DesignoDesigns
             path="/web-design"
             projectName="WEB DESIGN"
             desktopImage={allImages.homepageImages.webDesignDesktopImg}
             tabletImage={allImages.homepageImages.webDesignTabletImg}
             mobileImage={allImages.homepageImages.webDesignMobileImg}
           />
-          <Project
+          <DesignoDesigns
             path="/app-design"
             projectName="APP DESIGN"
             desktopImage={allImages.homepageImages.appDesignDesktopImg}
             tabletImage={allImages.homepageImages.appDesignTabletImg}
             mobileImage={allImages.homepageImages.appDesignMobileImg}
           />
-          <Project
+          <DesignoDesigns
             path="/graphic-design"
             projectName="GRAPHIC DESIGN"
             desktopImage={allImages.homepageImages.graphicDesignDesktopImg}
@@ -174,7 +174,7 @@ const Headertext = styled.p`
 
   @media screen and (min-width: 768px) {
     width: 85%;
-    font-size: ${({ theme }) => theme.fontSize.normal};
+    font-size: ${({ theme }) => theme.fontSize.small};
   }
 
   @media screen and (min-width: 1024px) {

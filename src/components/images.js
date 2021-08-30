@@ -39,6 +39,12 @@ import unitedKingdomMap from "../images/locations/desktop/image-map-united-kingd
 import australiaMapTablet from "../images/locations/tablet/image-map-australia.png";
 import canadaMapTablet from "../images/locations/tablet/image-map-canada.png";
 import unitedKingdomMapTablet from "../images/locations/tablet/image-map-uk.png";
+/* Graphic Design Images */
+
+import timBrownImg from "../images/graphic-design/desktop/image-change.jpg";
+import boxedWaterImg from "../images/graphic-design/desktop/image-boxed-water.jpg";
+import scienceImg from "../images/graphic-design/desktop/image-science.jpg";
+
 /* Shared Images */
 
 import circlePatternBackground from "../images/shared/desktop/bg-pattern-two-circles.svg";
@@ -94,6 +100,12 @@ export const allImages = {
     canadaMapTablet,
     unitedKingdomMap,
     unitedKingdomMapTablet,
+  },
+
+  graphicDesignPage: {
+    timBrownImg,
+    scienceImg,
+    boxedWaterImg,
   },
 
   shared: {
