@@ -13,7 +13,6 @@ const Hero = styled.section`
   justify-content: center;
   margin-bottom: 9.6rem;
   color: ${({ theme }) => theme.primaryColors.white};
-  border-radius: 15px;
 
   h1 {
     font-size: ${({ theme }) => theme.fontSize.large};
@@ -27,8 +26,18 @@ const Hero = styled.section`
   }
 
   @media screen and (min-width: 768px) {
-    font-size: ${({ theme }) => theme.fontSize.extralarge};
-    line-height: 48px;
+    width: 90%;
+    max-width: 1110px;
+    margin: auto;
+    border-radius: 15px;
+    h1 {
+      font-size: ${({ theme }) => theme.fontSize.extraLarge};
+      line-height: 48px;
+    }
+
+    p {
+      width: 60%;
+    }
   }
 `;
 
@@ -36,14 +45,14 @@ const Projects = ({ data }) => {
   console.log(data);
   return (
     <Layout>
-      <main className="container">
+      <main>
         <Hero>
-          <div className="container">
+          <div>
             <h1>{data.mdx.frontmatter.title}</h1>
             <p>{data.mdx.frontmatter.intro}</p>
           </div>
         </Hero>
-        <MDXRenderer>{data.mdx.body}</MDXRenderer>
+        <MDXRenderer className="container">{data.mdx.body}</MDXRenderer>
       </main>
     </Layout>
   );
