@@ -49,11 +49,11 @@ Users should be able to:
 
 ### What I learned
 
-- Learnt how to display different images on different viewport with the picture tag
 - Learnt how to use the background-position to position a background image
 - Learnt how to createpages dynamically in Gatsby
 - Learnt how to query data from the Gatsby data layer with graphql
 - Learnt how to use Markdown
+- Learnt how to display different images on different viewport with the picture tag
 
 ```html
 <picture>
