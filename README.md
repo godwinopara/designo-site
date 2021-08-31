@@ -1,54 +1,69 @@
-<p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby minimal starter
-</h1>
+# Frontend Mentor - Designo agency website solution
 
-## 🚀 Quick start
+This is a solution to the [Designo agency website challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/designo-multipage-website-G48K6rfUT). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
-1.  **Create a Gatsby site.**
+## Table of contents
 
-    Use the Gatsby CLI to create a new site, specifying the minimal starter.
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+- [Author](#author)
 
-    ```shell
-    # create a new Gatsby site using the minimal starter
-    npm init gatsby
-    ```
+**Note: Delete this note and update the table of contents based on what sections you keep.**
 
-2.  **Start developing.**
+## Overview
 
-    Navigate into your new site’s directory and start it up.
+### The challenge
 
-    ```shell
-    cd my-gatsby-site/
-    npm run develop
-    ```
+Users should be able to:
 
-3.  **Open the code and start customizing!**
+- View the optimal layout for each page depending on their device's screen size
+- See hover states for all interactive elements throughout the site
+- Receive an error message when the contact form is submitted if:
+  - The `Name`, `Email Address` or `Your Message` fields are empty should show "Can't be empty"
+  - The `Email Address` is not formatted correctly should show "Please use a valid email address"
 
-    Your site is now running at http://localhost:8000!
+### Screenshot
 
-    Edit `src/pages/index.js` to see your site update in real-time!
+![Preview](./preview.jpg)
 
-4.  **Learn more**
+### Links
 
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
 
-    - [Tutorials](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+## My process
 
-    - [Guides](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+### Built with
 
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+- [Gatsby](https://gatsbyjs.com/) - React framework
+- [Styled Components](https://styled-components.com/) - For styles
+- [MDX Markdown](https://mdxjs.com)
+- Flexbox
+- CSS Grid
+- Mobile-first workflow
 
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+### What I learned
 
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+- Learnt how to display different images on different viewport with the picture tag
+- Learnt how to use the background-position to position a background image
+- Learnt how to createpages dynamically in Gatsby
+- Learnt how to query data from the Gatsby data layer with graphql
+- Learnt how to use Markdown
 
-## 🚀 Quick start (Gatsby Cloud)
+```html
+<picture>
+  <source media="(min-width: 1024px)" srcset="desktopImg" />
+  <source media="(min-width: 768px)" srcset="tabletImg" />
+  <img scr="defaultImg" alt="" />
+</picture>
+```
 
-Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cloud/):
+## Author
 
-[<img src="https://www.gatsbyjs.com/deploynow.svg" alt="Deploy to Gatsby Cloud">](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/gatsbyjs/gatsby-starter-minimal)
+- Frontend Mentor - [@godwinopara](https://www.frontendmentor.io/profile/godwinopara)
+- Twitter - [@godwinopara12](https://www.twitter.com/godwinopara12)
