@@ -54,7 +54,7 @@ Users should be able to:
 - Learnt how to use Markdown
 - Learnt how to display different images on different viewport with the picture tag
 
-```html
+```bash
 <picture>
   <source media="(min-width: 1024px)" srcset="desktopImg" />
   <source media="(min-width: 768px)" srcset="tabletImg" />
